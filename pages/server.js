@@ -1,29 +1,39 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 const port = 3000;
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static('public'));
 
 // Define a route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Define a route for the articles page
-app.get('/articles', (req, res) => {
-  res.sendFile(path.join(__dirname, 'articles.html'));
-});
+// Define a generic route to handle other HTML pages
+app.get('/:page', (req, res) => {
+  const page = req.params.page;
 
-// Define a route for the podcast page
-app.get('/podcast', (req, res) => {
-  res.sendFile(path.join(__dirname, 'podcast.html'));
-});
+  // Check if the requested file has a valid HTML extension
+  if (path.extname(page) !== '.html') {
+    // Invalid request, send 404
+    res.status(404).send('Page not found');
+    return;
+  }
 
-// Define a route for the podcast2 page
-app.get('/podcast2', (req, res) => {
-  res.sendFile(path.join(__dirname, 'podcast.html'));
+  const filePath = path.join(__dirname, page);
+
+  console.log('Attempting to serve:', filePath);
+
+  if (fs.existsSync(filePath)) {
+    console.log('File exists. Sending...');
+    res.sendFile(filePath);
+  } else {
+    console.log('File does not exist.');
+    res.status(404).send('Page not found');
+  }
 });
 
 // Start the server
