@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-4oV5P+WB2MTExLy9adoaCP6NRq3Y4bUkedMEPJANQq4x9xg9Rv7dfl2Uq8kC2E5F" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="public/images/Logo_Daniel.svg" alt="" width="45" height="45">
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="podcast.html">Change Podcast</a>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="container">
+                    <label for="darkModeToggle">Dark Mode Toggle</label>
+                    <input type="checkbox" id="darkModeToggle">
+                </div>
+                <a href="#" id="biggerText">Bigger text</a>
+                <a href="#" id="smallerText">Smaller text</a>
+            </div>
+        </div>
+    </div>
+    <div class="textAndImages" id="content">
+        <h1>Phishing scam Podcast</h1><br><br><br><br><br>
+
+        <video id="yourVideo" width="640" height="400" controls>
+            <source src="public/images/podcast2.mp4" type="video/mp4">
+        </video><br><br><br>   
+        <div id="transcript-container" class="transcript"></div>     
+    </div>
+    <script src="public/js/script-for-podcast2.js"></script>
+</body>
+</html>

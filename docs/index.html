@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Dark Mode Toggle</title>
+</head>
+<body>
+    <div class="navbar">
+        <img src="public/images/Logo_Daniel.svg" alt="logo" width="45" height="45">
+        <a href="#home">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="podcast.html">Podcast</a>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="container">
+                    <label for="darkModeToggle">Dark Mode Toggle</label>
+                    <input type="checkbox" id="darkModeToggle">
+                </div>
+                <a href="#" id="biggerText">Bigger text</a>
+                <a href="#" id="smallerText">Smaller text</a>
+            </div>
+        </div>  
+    </div>
+
+    <div class="textAndImages" id="content">
+        <h1 class="middle-text">Podcasts</h1>
+
+        <!-- Add more podcasts as needed -->
+        <div class="carousel">
+            <div class="podcast">
+                <h1>Podcast about scamming</h1>
+                <a href="podcast.html"><img src="public/images/scam.jpeg" alt="scam"></a>
+            </div>
+
+            <div class="podcast">
+                <h1>Podcast about <br>Gaming Relations</h1>
+                <a href="podcast2.html"><img src="public/images/gaming.jpeg" alt="gaming"></a>
+            </div>
+            <!-- Add more podcasts as needed -->
+        </div>
+
+        <h1 class="middle-text">Articles</h1>
+
+        <!-- Add more articles as needed -->
+        <div class="carousel">
+            <div class="podcast article">
+                <h1>Article for scamming and gaming relations</h1>
+                <a href="articles.html"><img src="public/images/article.png" alt="tech"></a>
+            </div>
+
+            <!-- Add more articles as needed -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="public/js/script.js"></script>
+    <script src="public/js/slideshow.js"></script>
+</body>
+</html>
